@@ -6,6 +6,16 @@ include 'insumo-banco.php';
 
 			<table class="table table-striped table-bordered">
 
+			<thead>
+    <tr>
+      <th scope="col">Nome do Insumo</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Descrição</th>
+
+
+    </tr>
+  </thead>
+
 				<?php
 				$cafes = listaCafe($conexao);
 				foreach ($cafes as $cafe)

@@ -19,7 +19,7 @@ $cafes = listaCafe($conexao);
 			<td><input class="form-control" type="time" name="hora" /></td>
 		</tr>
 		<tr>
-			<td>Café</td>
+			<td>Insumo</td>
 			<td>
 				<select class="form-control" name="cafe_id">
 					<?php

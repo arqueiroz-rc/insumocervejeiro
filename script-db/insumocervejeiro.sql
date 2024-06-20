@@ -1,6 +1,6 @@
-create database if not exists cafeimetrodb character set utf8 collate utf8_general_ci;
+create database if not exists insumocervejeirodb character set utf8 collate utf8_general_ci;
 
-use cafeimetrodb;
+use insumocervejeirodb;
 
 create table tipo (
 	id INTEGER auto_increment primary key,

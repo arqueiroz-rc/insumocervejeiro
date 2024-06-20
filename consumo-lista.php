@@ -8,6 +8,18 @@ include 'consumo-banco.php';
 <button class="btn btn-primary" onclick="window.location.href='consumo-form-adiciona.php'">Adiciona Consumo</button><br/><br/>
 
 			<table class="table table-striped table-bordered">
+			
+						<thead>
+    <tr>
+      <th scope="col">Data</th>
+      <th scope="col">Hora</th>
+      <th scope="col">Dia da Semana</th>
+      <th scope="col">Insumo</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Valor</th>
+
+    </tr>
+  </thead>
 
 				<?php
 				$consumos = listaConsumo($conexao);
