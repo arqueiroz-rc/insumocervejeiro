@@ -22,7 +22,7 @@ include 'tipo-banco.php';
 						<td>
 						
 							<?php
-							$tem_vinculo = temVinculoComCafe($conexao, $tipo['id']);
+							$tem_vinculo = temVinculoComInsumo($conexao, $tipo['id']);
 							$status_botao = ($tem_vinculo == 0) ? "" : "disabled";
 							?>
 								<form name="form-remove" method="post" action="tipo-prepara-exclui.php">

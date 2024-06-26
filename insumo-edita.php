@@ -8,7 +8,7 @@ $nome = $_POST['nome'];
 $descricao = $_POST['descricao'];
 $tipo_id = $_POST['tipo_id'];
 
-$alterou = alteraCafe($conexao, $id, $nome, $descricao, $tipo_id);
+$alterou = alteraInsumo($conexao, $id, $nome, $descricao, $tipo_id);
 if ($alterou)
 {
 ?>

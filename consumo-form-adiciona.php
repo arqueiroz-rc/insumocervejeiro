@@ -3,7 +3,7 @@ include 'cabecalho-menu.php';
 include 'conecta.php';
 include 'insumo-banco.php';
 
-$cafes = listaCafe($conexao);
+$insumos = listaInsumo($conexao);
 
 ?>
 
@@ -21,12 +21,12 @@ $cafes = listaCafe($conexao);
 		<tr>
 			<td>Insumo</td>
 			<td>
-				<select class="form-control" name="cafe_id">
+				<select class="form-control" name="insumo_id">
 					<?php
-					foreach($cafes as $cafe)
+					foreach($insumos as $insumo)
 					{
 					?>
-						<option value="<?=$cafe['id']?>"> <?=$cafe['nome_cafe']?> </option>
+						<option value="<?=$insumo['id']?>"> <?=$insumo['nome_insumo']?> </option>
 					<?php
 					}
 					?>

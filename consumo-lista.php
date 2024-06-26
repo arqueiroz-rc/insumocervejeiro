@@ -31,7 +31,7 @@ include 'consumo-banco.php';
 						<td><?=$consumo['data_consumo']?></td>
 						<td><?=$consumo['hora_consumo']?></td>
 						<td><?=$consumo['dia_semana']?></td>
-						<td><?=$consumo['cafe_nome']?></td>
+						<td><?=$consumo['insumo_nome']?></td>
 						<td><?=$consumo['qtd']?></td>
 						<td>R$<?=number_format($consumo['preco'],2,',',',')?></td>
 						<td>

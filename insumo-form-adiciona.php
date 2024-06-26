@@ -2,13 +2,14 @@
 include 'cabecalho-menu.php';
 include 'conecta.php';
 include 'tipo-banco.php';
+include 'insumo-banco.php';
 
 $tipos = listaTipo($conexao);
 
 ?>
 
-<h1>Adiciona Café</h1>
-<form action="" method="post" name="formcafe">
+<h1>Adiciona Insumo</h1>
+<form action="" method="post" name="forminsumo">
 	<table class="table">
 		<tr>
 			<td>Nome *</td>
@@ -38,6 +39,7 @@ $tipos = listaTipo($conexao);
 		</tr>
 		<tr>
 		<td><button class="btn btn-primary" type="button" onclick="validaForm('insumo-adiciona.php')">Salvar</button></td>
+		
 		</tr>
 	</table>
 </form>

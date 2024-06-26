@@ -7,7 +7,7 @@ $nome = $_POST['nome'];
 $descricao = $_POST['descricao'];
 $tipo_id = $_POST['tipo_id'];
 
-$adicionou = adicionaCafe($conexao, $nome, $descricao, $tipo_id);
+$adicionou = adicionaInsumo($conexao, $nome, $descricao, $tipo_id);
 if ($adicionou)
 {
 ?>

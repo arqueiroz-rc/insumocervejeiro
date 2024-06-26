@@ -10,31 +10,31 @@ include 'insumo-banco.php';
     <tr>
       <th scope="col">Nome do Insumo</th>
       <th scope="col">Descrição</th>
-      <th scope="col">Descrição</th>
+      <th scope="col">Tipo</th>
 
 
     </tr>
   </thead>
 
 				<?php
-				$cafes = listaCafe($conexao);
-				foreach ($cafes as $cafe)
+				$insumos = listaInsumo($conexao);
+				foreach ($insumos as $insumo)
 				{
 				?>
 					
 					<tr>
-						<td><?=$cafe['nome_cafe']?></td>
-						<td><?=$cafe['descricao']?></td>
-						<td><?=$cafe['nome_tipo']?></td>
+						<td><?=$insumo['nome_insumo']?></td>
+						<td><?=$insumo['descricao']?></td>
+						<td><?=$insumo['nome_tipo']?></td>
 						<td>
-							<form name="form-altera" method="post" action="cafe-form-edita.php">
-								<input type="hidden" name="id" value="<?=$cafe['id']?>" />
+							<form name="form-altera" method="post" action="insumo-form-edita.php">
+								<input type="hidden" name="id" value="<?=$insumo['id']?>" />
 								<button class="btn btn-primary">Altera</button>							
 							</form>
 						</td>
 						<td>
-								<form name="form-remove" method="post" action="cafe-prepara-exclui.php">
-								<input type="hidden" name="id" value="<?=$cafe['id']?>" />
+								<form name="form-remove" method="post" action="insumo-prepara-exclui.php">
+								<input type="hidden" name="id" value="<?=$insumo['id']?>" />
 								<button class="btn btn-danger">Remove</button>						
 							</form>
 						</td>

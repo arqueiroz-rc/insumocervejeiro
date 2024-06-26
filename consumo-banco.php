@@ -3,11 +3,11 @@ function listaConsumo($conexao)
 {
 	$consumos = array();
 	
-	$query  = " select co.id as consumo_id, date_format(co.data, '%d/%m/%Y') as data_consumo, ";
-	$query .= " date_format(co.hora, '%H:%i') as hora_consumo, co.dia_semana, ";
-	$query .= " co.preco, co.qtd, ca.nome as cafe_nome ";
-	$query .= " from consumo co ";
-	$query .= " inner join cafe ca on (ca.id = co.cafe_id) ";
+	$query  = " select c.id as consumo_id, date_format(c.data, '%d/%m/%Y') as data_consumo, ";
+	$query .= " date_format(c.hora, '%H:%i') as hora_consumo, c.dia_semana, ";
+	$query .= " c.preco, c.qtd, i.nome as insumo_nome ";
+	$query .= " from consumo c ";
+	$query .= " inner join insumo i on (i.id = c.insumo_id) ";
 	$query .= " where 1=1 ";
 
 	$instrucao = $conexao->prepare($query);
@@ -29,11 +29,11 @@ function removeConsumo($conexao, $id)
 	return $instrucao->execute();
 }
 
-function adicionaConsumo($conexao, $data, $hora, $cafe_id, $qtd, $preco, $dia_semana)
+function adicionaConsumo($conexao, $data, $hora, $insumo_id, $qtd, $preco, $dia_semana)
 {
-	$query = "insert into consumo (data, hora, cafe_id, qtd, preco, dia_semana) values (?,?,?,?,?,?) ";
+	$query = "insert into consumo (data, hora, insumo_id, qtd, preco, dia_semana) values (?,?,?,?,?,?) ";
 	$instrucao = $conexao->prepare($query);
-	$instrucao->bind_param('ssisds', $data, $hora, $cafe_id, $qtd, $preco, $dia_semana);
+	$instrucao->bind_param('ssisds', $data, $hora, $insumo_id, $qtd, $preco, $dia_semana);
 	return $instrucao->execute();
 }
 

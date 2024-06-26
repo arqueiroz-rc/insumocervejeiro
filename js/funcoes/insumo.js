@@ -18,6 +18,6 @@ function validaForm(destino)
 		return false;
 	}
 	
-	document.formcafe.action = destino; 
-	document.formcafe.submit();
+	document.forminsumo.action = destino; 
+	document.forminsumo.submit();
 }

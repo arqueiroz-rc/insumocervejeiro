@@ -7,22 +7,22 @@ include 'tipo-banco.php';
 
 $id = $_POST['id'];
 
-$cafe = buscaCafePorID($conexao, $id);
+$insumo = buscaInsumoPorID($conexao, $id);
 $tipos = listaTipo($conexao);
 
 ?>
 
-<h1>Confirma remover o Café</h1>
+<h1>Confirma remover o Insumo</h1>
 <form action="insumo-exclui.php" method="post">
-	<input type="hidden" name="id" value="<?=$cafe['id']?>" />
+	<input type="hidden" name="id" value="<?=$insumo['id']?>" />
 	<table class="table">
 		<tr>
 			<td>Nome</td>
-			<td><input class="form-control" type="text" name="nome" value="<?=$cafe['nome']?>" readonly/></td>
+			<td><input class="form-control" type="text" name="nome" value="<?=$insumo['nome']?>" readonly/></td>
 		</tr>
 		<tr>
 			<td>Descrição</td>
-			<td><textarea class="form-control" name="descricao" readonly><?=$cafe['descricao']?></textarea></td>
+			<td><textarea class="form-control" name="descricao" readonly><?=$insumo['descricao']?></textarea></td>
 		</tr>
 		<tr>
 			<td>Tipo</td>
@@ -32,7 +32,7 @@ $tipos = listaTipo($conexao);
 					<?php
 					foreach($tipos as $tipo)
 					{
-							$opcaoSelecionada = ($cafe['tipo_id'] == $tipo['id']) ? "selected='selected'" : "";
+							$opcaoSelecionada = ($insumo['tipo_id'] == $tipo['id']) ? "selected='selected'" : "";
 					?>
 					
 						<option value="<?=$tipo['id']?>" <?=$opcaoSelecionada ?> > <?=$tipo['nome']?> </option>

@@ -1,13 +1,13 @@
-create database if not exists insumocervejeirodb character set utf8 collate utf8_general_ci;
+create database if not exists insumocervejaria character set utf8 collate utf8_general_ci;
 
-use insumocervejeirodb;
+use insumocervejaria;
 
 create table tipo (
 	id INTEGER auto_increment primary key,
 	nome VARCHAR(25)
 ) engine=InnoDB; 
 
-create table cafe (
+create table insumo (
 	id INTEGER auto_increment primary key,
 	nome VARCHAR(25),
 	descricao VARCHAR(125),
@@ -22,6 +22,6 @@ create table consumo (
 	qtd INTEGER,
 	dia_semana VARCHAR (7),
 	preco DECIMAL (5,2),
-	cafe_id INTEGER,
-	constraint FOREIGN key (cafe_id) references cafe (id)
+	insumo_id INTEGER,
+	constraint FOREIGN key (insumo_id) references insumo (id)
 ) engine=InnoDB;

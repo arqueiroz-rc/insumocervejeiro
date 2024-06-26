@@ -6,7 +6,7 @@ include 'insumo-banco.php';
 $id = $_POST['id'];
 $nome = $_POST['nome'];
 
-$excluiu = removeCafe($conexao, $id);
+$excluiu = removeInsumo($conexao, $id);
 if ($excluiu)
 {
 ?>

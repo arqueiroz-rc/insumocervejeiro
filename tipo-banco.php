@@ -45,9 +45,9 @@ function temTipoPorNome($conexao, $nome)
 	return $count['qtd'];
 }
 
-function temVinculoComCafe($conexao, $id)
+function temVinculoComInsumo($conexao, $id)
 {
-	$query = "select count(id) as qtd from cafe where tipo_id = ? ";
+	$query = "select count(id) as qtd from insumo where tipo_id = ? ";
 	$instrucao = $conexao->prepare($query);
 	$instrucao->bind_param('i', $id);
 	$instrucao->execute();

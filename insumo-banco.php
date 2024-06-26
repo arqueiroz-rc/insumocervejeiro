@@ -1,47 +1,47 @@
 <?php
-function adicionaCafe($conexao, $nome, $descricao, $tipo_id)
+function adicionaInsumo($conexao, $nome, $descricao, $tipo_id)
 {
-	$query = "insert into cafe (nome, descricao, tipo_id) values (?,?,?) ";
+	$query = "insert into insumo (nome, descricao, tipo_id) values (?,?,?) ";
 	$instrucao = $conexao->prepare($query);
 	$instrucao->bind_param('ssi', $nome, $descricao, $tipo_id);
 	return $instrucao->execute();
 }
 
-function removeCafe($conexao, $id)
+function removeInsumo($conexao, $id)
 {
-	$query = "delete from cafe where id = ? ";
+	$query = "delete from insumo where id = ? ";
 	$instrucao = $conexao->prepare($query);
 	$instrucao->bind_param('i', $id);
 	return $instrucao->execute();
 }
 
-function alteraCafe($conexao, $id, $nome, $descricao, $tipo_id)
+function alteraInsumo($conexao, $id, $nome, $descricao, $tipo_id)
 {
-	$query = "update cafe set nome = ?, descricao = ?, tipo_id = ? where id = ? ";
+	$query = "update insumo set nome = ?, descricao = ?, tipo_id = ? where id = ? ";
 	$instrucao = $conexao->prepare($query);
 	$instrucao->bind_param('ssii', $nome, $descricao, $tipo_id, $id);
 	return $instrucao->execute();
 }
-function listaCafe($conexao)
+function listaInsumo($conexao)
 {
-	$cafes = array();
+	$insumos = array();
 	
-	$query = "select c.id, c.nome as nome_cafe, c.descricao, t.nome as nome_tipo from cafe c ";
-	$query .= " inner join tipo t on (c.tipo_id = t.id) ";
+	$query = "select i.id, i.nome as nome_insumo, i.descricao, t.nome as nome_tipo from insumo i ";
+	$query .= " inner join tipo t on (i.tipo_id = t.id) ";
 	$instrucao = $conexao->prepare($query);
 	$instrucao->execute();
 	$resultado = $instrucao->get_result();
-	while ($cafe = $resultado->fetch_assoc())
+	while ($insumo = $resultado->fetch_assoc())
 	{
-		array_push($cafes, $cafe);
+		array_push($insumos, $insumo);
 	}
 	
-	return $cafes;
+	return $insumos;
 }
 
-function buscaCafePorID($conexao, $id)
+function buscaInsumoPorID($conexao, $id)
 {
-	$query = "select id, nome, descricao, tipo_id from cafe where id = ? ";
+	$query = "select id, nome, descricao, tipo_id from insumo where id = ? ";
 	$instrucao = $conexao->prepare($query);
 	$instrucao->bind_param('i', $id);
 	$instrucao->execute();

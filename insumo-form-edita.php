@@ -7,22 +7,22 @@ include 'tipo-banco.php';
 
 $id = $_POST['id'];
 
-$cafe = buscaCafePorID($conexao, $id);
+$insumo = buscaInsumoPorID($conexao, $id);
 $tipos = listaTipo($conexao);
 
 ?>
 
-<h1>Altera Café</h1>
-<form action="" method="post" name="formcafe">
-	<input type="hidden" name="id" value="<?=$cafe['id']?>" />
+<h1>Altera Insumo</h1>
+<form action="" method="post" name="forminsumo">
+	<input type="hidden" name="id" value="<?=$insumo['id']?>" />
 	<table class="table">
 		<tr>
 			<td>Nome *</td>
-			<td><input class="form-control" type="text" name="nome" id="nome" value="<?=$cafe['nome']?>" /></td>
+			<td><input class="form-control" type="text" name="nome" id="nome" value="<?=$insumo['nome']?>" /></td>
 		</tr>
 		<tr>
 			<td>Descrição *</td>
-			<td><textarea class="form-control" name="descricao" id="descricao" ><?=$cafe['descricao']?></textarea></td>
+			<td><textarea class="form-control" name="descricao" id="descricao" ><?=$insumo['descricao']?></textarea></td>
 		</tr>
 		<tr>
 			<td>Tipo *</td>
@@ -32,7 +32,7 @@ $tipos = listaTipo($conexao);
 					<?php
 					foreach($tipos as $tipo)
 					{
-							$opcaoSelecionada = ($cafe['tipo_id'] == $tipo['id']) ? "selected='selected'" : "";
+							$opcaoSelecionada = ($insumo['tipo_id'] == $tipo['id']) ? "selected='selected'" : "";
 					?>
 					
 						<option value="<?=$tipo['id']?>" <?=$opcaoSelecionada ?> > <?=$tipo['nome']?> </option>

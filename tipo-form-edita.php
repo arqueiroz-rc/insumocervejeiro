@@ -7,7 +7,7 @@ include 'tipo-banco.php';
 $id = $_POST['id'];
 
 $tipo = buscaTipoPorID($conexao, $id);
-$tem_vinculo = temVinculoComCafe($conexao, $id);
+$tem_vinculo = temVinculoComInsumo($conexao, $id);
 $msg = ($tem_vinculo == 0) ? "" : "Atenção!<br/>Existem cafés associados a este tipo.<br/>Se você confirmar a operação, todos os cafés associados receberão o novo tipo.";
 ?>
 
@@ -25,7 +25,7 @@ $msg = ($tem_vinculo == 0) ? "" : "Atenção!<br/>Existem cafés associados a es
 	</table>
 </form>
 
-<div id="msg-vinculo-cafe"><p class="text-danger"><?=$msg?></p></div>
+<div id="msg-vinculo-insumo"><p class="text-danger"><?=$msg?></p></div>
 
 <?php
 include 'rodape.php';
