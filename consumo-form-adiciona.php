@@ -38,7 +38,7 @@ $insumos = listaInsumo($conexao);
 			<td><input class="form-control" type="text" name="qtd" min="0" /></td>
 		</tr><tr>
 			<td>Preço</td>
-			<td><input class="form-control" type="number" name="preco" min="0.00" max="999.00" step="0.01" /></td>
+			<td><input class="form-control" type="number" name="preco" min="0.00" max="9999.00" step="0.01" /></td>
 		</tr>
 		<tr>
 		<td><button class="btn btn-primary" type="submit">Adiciona Consumo</button></td>
